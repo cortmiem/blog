@@ -1,0 +1,25 @@
+{{- $ThemeVersion := "4.0.0-alpha.0" -}}
+<footer class="site-footer">
+    <img src="https://count.getloli.com/get/@:cortmiem?theme=moebooru" alt=":cortmiem" loading="lazy" />
+
+    <section class="copyright">
+        &copy;
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+        {{ .Site.Params.footer.since }} -
+        {{ end }}
+        {{ now.Format "2006" }} <a href="https://suisei.eu.org" target="_blank" rel="noopener">Cortmiem Demo</a>
+    </section>
+
+    <section class="powerby">
+        {{ with .Site.Params.footer.customText }}
+        {{ . | safeHTML }} <br />
+        {{ end }}
+        {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
+        {{- $Theme := printf `<b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+                data-version="%s">Stack</a></b>` $ThemeVersion -}}
+        {{- $DesignedBy := `<a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+        <span id="hitokoto"><a href="#" id="hitokoto_text">:D 少女祈祷中...</a></span> <br />
+        <span>Built with Hugo. Theme <b><a href="https://github.com/cortmiem/blog/tree/main/themes/">luminous</a></b> 2308 based on <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>/<b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+            data-version="%s">Stack.</a></b></span>
+    </section>
+</footer>

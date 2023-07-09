@@ -1,0 +1,11 @@
+{{- $title := .Title -}}
+{{- $siteTitle := .Site.Title -}}
+
+{{- if .IsHome -}}
+    {{ $title = $siteTitle }}
+{{- else -}}
+    {{ $title = (slice $title) | append " - " .Site.Title }}
+    {{ $title = delimit $title "" }}
+{{- end -}}
+
+{{ return (print $title) }}
