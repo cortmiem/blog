@@ -3,7 +3,7 @@ languageCode: ja-jp
 theme: hugo-theme-stack
 paginate: 3
 title: Example Site
-publishDir: docs
+# publishDir: docs
 
 languages:
     ja:
